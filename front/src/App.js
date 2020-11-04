@@ -15,6 +15,7 @@ const App = () => {
 
   const login = useCallback(() => {
     setIsLoggedIn(true);
+//     Does eslint give warnings when using this array in useCallback() as I also tried to use useCallback(), but it keep throwing warnings.
   }, []);
 
   const logout = useCallback(() => {
@@ -22,7 +23,7 @@ const App = () => {
   }, []);
 
   let routes;
-
+// Good to learn how you use Route in React.
   if (isLoggedIn) {
     routes = (
       <Switch>
