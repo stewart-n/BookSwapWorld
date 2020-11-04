@@ -7,6 +7,7 @@ function MyDB() {
 
   //get user informatiom
   myDB.getUsers = async () => {
+//     Maybe creating only one MongoClient is better than creating multiple clients as Mongo Client is threadsafe and actually is a pool of connections. :)
     const client = new MongoClient(uri, { useUnifiedTopology: true });
 
     await client.connect();
@@ -21,7 +22,8 @@ function MyDB() {
       .sort({ _id: -1 })
       .limit(10)
       .toArray()
-      .finally(() => client.close());
+//     A good practice to close the client after finishing using the database.
+      .finally(() => client.close());  
   };
 
   //insert new users
@@ -32,7 +34,8 @@ function MyDB() {
 
     const db = client.db("db");
     const users = db.collection("users");
-
+    
+//     Maybe adding an error handling here is a good practice. :)
     return await users.insertOne(users);
   };
 
