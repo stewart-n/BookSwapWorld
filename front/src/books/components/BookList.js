@@ -19,6 +19,7 @@ const BookList = props => {
 
   return (
     <ul className="book-list">
+//     I was wondering if it is better to add <li> structure when using map in React.
       {props.items.map(book => (
         <BookItem
           key={book.id}
