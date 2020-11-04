@@ -21,6 +21,7 @@ const BookList = props => {
     <ul className="book-list">
       {props.items.map(book => (
         <BookItem
+//     A good practice to set a key when using map.
           key={book.id}
           id={book.id}
           image={book.imageUrl}
