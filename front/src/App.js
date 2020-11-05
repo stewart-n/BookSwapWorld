@@ -71,3 +71,8 @@ const App = () => {
 };
 
 export default App;
+
+/*
+The front end code is organized very well, there are communications between components and there are use states that help the front end to render proper pages. 
+
+*/
